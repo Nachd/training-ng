@@ -1,0 +1,20 @@
+<div class="{{'align' | translate}}">{{ 'key' | translate}}</div>
+<div class="row">
+    <input class="form-control" [(ngModel)]="ch.content" (keyup.enter)="save()">
+   
+</div>
+<div class="row">
+    <button class="btn btn-primary r2l" (click)="save()"> Save</button>
+</div>
+
+<div class="row">
+    <ul>
+        <li *ngFor="let t of tab" [style.background]="t.isDone ? 'green' : '' " (click)="select(t)">
+            {{t.content}} - {{t.date | date}} 
+            <button class="btn btn-danger" (click)="delete()"> delete</button>
+            <button class="btn btn-success" (click)="done(t._id)" [disabled]="t.isDone"> done</button>
+        </li>
+    </ul>
+</div>
+
+<app-sub-todo [item]="selectedItem" (handler)="update()"></app-sub-todo>

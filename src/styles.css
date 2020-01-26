@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+.r2l{
+    float: right;
+    text-align: right;
+}
+
+.l2r{
+    float: left;
+    text-align: left;
+}

@@ -1,0 +1,7 @@
+<input class="form-control" placeholder="Subject" [(ngModel)]="request.subject">
+
+<textarea class="form-control" [(ngModel)]="request.content">
+
+</textarea>
+
+<button class="btn btn-save form-control" (click)="send()" [disabled]="!request.subject || !request.content"> Send Request</button>
