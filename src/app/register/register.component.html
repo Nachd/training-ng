@@ -8,19 +8,19 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Create an Account! {{ form.valid}}</h1>
+                <h1 class="h4 text-gray-900 mb-4">{{'auth.CreateAnAccount' | translate}}</h1>
               </div>
               <form class="user"  [formGroup]="form">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name"  formControlName="firstName" [(ngModel)]="user.firstName">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="{{'auth.firstname' | translate}}"  formControlName="firstName" [(ngModel)]="user.firstName" dir="{{'dir' | translate}}">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" formControlName="lastName" [(ngModel)]="user.lastName">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="{{'auth.lastname' | translate}}" formControlName="lastName" [(ngModel)]="user.lastName" dir="{{'dir' | translate}}">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" formControlName="email" [(ngModel)]="user.email" email="true" required>
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" formControlName="email" [(ngModel)]="user.email" email="true" required dir="{{'dir' | translate}}">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
@@ -38,7 +38,7 @@
                 <button [disabled]="!form.valid || user.password != rePassword" class="btn btn-primary btn-user btn-block"
                 (click)="register()"
                 >
-                  Register Account
+                {{'auth.registerAccount' | translate}}
                 </button>
                 <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">

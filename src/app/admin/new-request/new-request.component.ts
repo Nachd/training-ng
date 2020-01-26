@@ -3,6 +3,7 @@ import { Request } from 'src/app/viewModels/request';
 import Swal from 'sweetalert2';
 import { TestService } from 'src/app/apis/test.service';
 import { RequestType } from 'src/app/viewModels/request-type';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-new-request',
@@ -11,11 +12,14 @@ import { RequestType } from 'src/app/viewModels/request-type';
 })
 export class NewRequestComponent implements OnInit {
 
-  constructor(private requestApi : TestService) { }
+  constructor(private requestApi : TestService , 
+    private activatedRoute : ActivatedRoute
+    ) { }
 
   request : Request = new Request();
+  id;
   ngOnInit() {
-  
+  this.id = this.activatedRoute.snapshot.params['id']
   
   }
 

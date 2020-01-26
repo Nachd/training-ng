@@ -1,4 +1,10 @@
 {
     "key" : "محتوى",
-    "align" : "r2l"
+    "align" : "r2l",
+    "dir" : "rtl",
+    "auth" : {
+        "CreateAnAccount" : "تسجيل الدخول",
+        "firstname" : "الإسم"
+
+    }
 }

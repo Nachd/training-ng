@@ -21,6 +21,9 @@ const routes: Routes = [
       }, {
         path: 'new-request',
         component: NewRequestComponent
+      }, {
+        path: 'edit-request/:id',
+        component: NewRequestComponent
       }
     ]
   },

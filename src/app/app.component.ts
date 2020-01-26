@@ -11,7 +11,13 @@ export class AppComponent {
 
   constructor(translate : TranslateService){
     translate.setDefaultLang('en');
-    translate.use('en');
+    let lang=localStorage.getItem('l')
+    if(lang){
+      translate.use(lang)
+    }else{
+
+      translate.use('en');
+    }
    
   }
 }

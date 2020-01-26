@@ -1,5 +1,17 @@
 {
     "key" : "value",
-    "align" : "l2r"
+    "align" : "l2r",
+    "dir" : "ltr",
+
+    "auth" : {
+        "CreateAnAccount" : "Create An Account",
+        "firstname" : "First Name"
+
+    }
+
+    ,
+    "requests":{
+
+    }
     
 }

@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/viewModels/user';
 import { TestService } from 'src/app/apis/test.service';
+import { SocketsService } from 'src/app/apis/sockets.service';
 
 @Component({
   selector: 'app-layout',
@@ -13,9 +14,18 @@ export class LayoutComponent implements OnInit {
 
   constructor(public translate: TranslateService ,
      private router : Router,
+     private socketService : SocketsService,
      private testApi : TestService) { }
 user : User
+notifs : any[]=[];
   ngOnInit() {
+    
+    this.socketService
+    .getSocketFromServer()
+    .subscribe((data: any) => {
+     this.notifs.push(data)
+     //
+    })
     
     this.testApi.getAll()
     .subscribe(
@@ -34,5 +44,6 @@ user : User
   }
   changeLang(val) {
     this.translate.use(val)
+    localStorage.setItem('l' , val)
   }
 }
