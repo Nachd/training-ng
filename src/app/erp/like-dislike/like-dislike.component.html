@@ -1,0 +1,13 @@
+
+<div class="card">
+    <h5 class="card-header">Featured {{p}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer">
+       {{nbr_like}} <span class="fa fa-thumbs-up" [style.color]="isLike ? 'blue' : 'black'" (click)="changeStatus('like')"></span> &nbsp; 
+      {{nbr_dislike}}  <span class="fa fa-thumbs-down"  [style.color]="isDislike ? 'red' : 'black'" (click)="changeStatus('dislike')"></span>
+    </div>
+  </div>

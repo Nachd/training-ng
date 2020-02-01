@@ -24,4 +24,13 @@ url = this.config.hostname;
   getAllRequests(){
     return this.http.get(this.url+'/allrequests')
   }
+
+
+  sendmailService(emaill , contentt){
+    let body = {
+      email : emaill,
+      content : contentt
+    }
+    return this.http.post(this.url+'/sendmail' ,body)
+  }
 }

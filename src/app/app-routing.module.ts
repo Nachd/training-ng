@@ -30,8 +30,15 @@ const routes: Routes = [
   {
     path : 'register',
     component : RegisterComponent
+  },
+  {
+    path :'erp',
+    loadChildren : './erp/erp.module#ErpModule'
   }
- 
+  ,{
+    path : '**',
+    component : RegisterComponent
+  }
 ];
 
 @NgModule({
