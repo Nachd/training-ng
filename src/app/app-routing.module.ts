@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { TodoComponent } from './admin/todo/todo.component';
-import { RegisterComponent } from './register/register.component';
 import { NewRequestComponent } from './admin/new-request/new-request.component';
 import { RequestsComponent } from './admin/requests/requests.component';
 
@@ -27,18 +26,13 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path : 'register',
-    component : RegisterComponent
-  },
+  
   {
     path :'erp',
     loadChildren : './erp/erp.module#ErpModule'
-  }
-  ,{
-    path : '**',
-    component : RegisterComponent
-  }
+  },
+  {path : 'auth', 
+loadChildren : './auth/auth.module#AuthModule'}
 ];
 
 @NgModule({

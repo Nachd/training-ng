@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/viewModels/post';
+import { PostService } from 'src/app/apis/post.service';
 
 @Component({
   selector: 'app-erp',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErpComponent implements OnInit {
 
-  constructor() { }
-  posts = [1 ,2 , 3 , 4 ]
+  constructor(private postApi : PostService) { }
+  posts : Post[];
   ngOnInit() {
+    this.postApi.getAllPosts()
+    .subscribe((data : Post[])=>{
+      this.posts = data
+    })
   }
 
 }
