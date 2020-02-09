@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TestService } from 'src/app/apis/test.service';
 import { Request } from 'src/app/viewModels/request';
 
@@ -9,6 +9,7 @@ import { Request } from 'src/app/viewModels/request';
 })
 export class RequestsComponent implements OnInit {
 
+  @Input() keyword : string;
   constructor(private requestApis : TestService) { }
 
   requests : Request[];

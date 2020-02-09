@@ -24,6 +24,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.css",
               "src/assets/vendor/fontawesome-free/css/all.min.css",
               "src/assets/css/sb-admin-2.min.css",
@@ -97,6 +100,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.css"
             ],
             "scripts": []
@@ -128,6 +134,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "training-ng"
 }

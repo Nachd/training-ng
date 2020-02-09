@@ -11,6 +11,8 @@ export class SubTodoComponent implements OnInit {
   @Input() item;
   @Output() handler: EventEmitter<any> = new EventEmitter();
 
+  
+  @Input() keyword : string;
   ngOnInit() {
   }
 

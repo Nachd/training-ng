@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵSWITCH_TEMPLATE_REF_FACTORY__POST_R3__ } from '@angular/core';
+import { Component, OnInit, ɵSWITCH_TEMPLATE_REF_FACTORY__POST_R3__, Input } from '@angular/core';
 import { Todo } from 'src/app/viewModels/todo';
 import Swal from 'sweetalert2'; 
 @Component({
@@ -12,6 +12,8 @@ export class TodoComponent implements OnInit {
   ch : Todo = new Todo();
   tab : Todo[] = [];
   selectedItem : Todo;
+  
+  @Input() keyword : string;
   ngOnInit() {
   }
 

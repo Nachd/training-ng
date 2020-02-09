@@ -1,0 +1,16 @@
+<p>employees works!</p>
+{{keyword}}
+<table>
+    <tr *ngFor="let i of items">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.cin}}</td>
+    </tr>
+</table>
+
+<table>
+    <tr *ngFor="let i of users">
+        <td>{{i.email}}</td>
+        <td><button (click)="sendNotif(i._id)">SendNotif</button></td>
+    </tr>
+</table>

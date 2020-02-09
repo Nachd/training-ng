@@ -1,0 +1,25 @@
+<p>categories works!  &#128512; </p>
+<table>
+    <tr *ngFor="let i of items">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.date}}</td>
+    </tr>
+</table>
+<p>I will display &#128512;</p>
+<p>I will display &#x1F600;</p>
+
+<kendo-grid [data]="items" [height]="410" [filterable]="true" [resizable]="true"
+pageSize="2" [pageable]="true"
+>
+    <kendo-grid-column field="id" title="ID" width="40">
+    </kendo-grid-column>
+    <kendo-grid-column field="name" title="Name" width="250">
+    </kendo-grid-column>
+    <kendo-grid-column  title="Date">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            {{dataItem.date |date}}
+        </ng-template>
+    </kendo-grid-column>
+   
+</kendo-grid>

@@ -33,4 +33,8 @@ url = this.config.hostname;
     }
     return this.http.post(this.url+'/sendmail' ,body)
   }
+
+  getAllUsers(){
+    return this.http.get(this.url+'/users')
+  }
 }

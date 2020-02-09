@@ -13,6 +13,13 @@ import { TodoComponent } from './admin/todo/todo.component';
 import { SubTodoComponent } from './admin/sub-todo/sub-todo.component';
 import { NewRequestComponent } from './admin/new-request/new-request.component';
 import { RequestsComponent } from './admin/requests/requests.component';
+import { EmployeesComponent } from './admin/employees/employees.component';
+import { CategoriesComponent } from './admin/categories/categories.component';
+import { PlacesComponent } from './admin/places/places.component';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -24,6 +31,9 @@ export function createTranslateLoader(http: HttpClient) {
     SubTodoComponent,
     NewRequestComponent,
     RequestsComponent,
+    EmployeesComponent,
+    CategoriesComponent,
+    PlacesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +47,9 @@ export function createTranslateLoader(http: HttpClient) {
             useFactory: (createTranslateLoader),
             deps: [HttpClient]
         }
-    })
+    }),
+    GridModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

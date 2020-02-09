@@ -16,25 +16,25 @@ export class SocketsService {
     this.socket = io(this.uri);
 
   }
+  sendLoginNotif(id){
+    this.socket.emit('login' , id);
+  }
 
-  public getSocketFromServer = () => {
+  sendNotif(data){
+    console.log(data)
+    this.socket.emit('notify' , data)
+  }
+
+
+public getNotifs = () => {
     return Observable.create((observer) => {
-
-      this.socket.on('notif', (message) => {
-        console.log(message)
+      
+      this.socket.on('receiveNotif' , (message)=>{
+   
         observer.next(message);
-      });
+      })
 
-      this.socket.on('chat', (message) => {
-        console.log(message)
-        observer.next(message);
-      });
-
-    })
+    });
   }
 
-  public sendNotif(body : any) {
-    
-    this.socket.emit('new-request' , body)
-  }
 }

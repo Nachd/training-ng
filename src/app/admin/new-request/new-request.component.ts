@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Request } from 'src/app/viewModels/request';
 import Swal from 'sweetalert2';
 import { TestService } from 'src/app/apis/test.service';
@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NewRequestComponent implements OnInit {
 
+  @Input() keyword : string;
   constructor(private requestApi : TestService , 
     private activatedRoute : ActivatedRoute
     ) { }

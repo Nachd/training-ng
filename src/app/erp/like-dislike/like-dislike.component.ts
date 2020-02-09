@@ -20,7 +20,7 @@ export class LikeDislikeComponent implements OnInit {
   nbr_dislike = 0;
   userReact : React = new React();
   user : User ;
-  ngOnInit() {
+  ngOnInit(){
     this.user = JSON.parse(localStorage.getItem('user'))
     this.userReact.userId = this.user;
     this.userReact.postId = this.p;

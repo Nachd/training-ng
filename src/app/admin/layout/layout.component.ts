@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/viewModels/user';
 import { TestService } from 'src/app/apis/test.service';
 import { SocketsService } from 'src/app/apis/sockets.service';
-
+declare var $ : any;
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -17,15 +17,25 @@ export class LayoutComponent implements OnInit {
      private socketService : SocketsService,
      private testApi : TestService) { }
 user : User
+keyword : string
 notifs : any[]=[];
+result : any[]=[];
+allScreens : any[]=[
+  {name : 'employees' , link : '/employees' },
+  {name : 'categories' , link : '/categories'}
+]
+
   ngOnInit() {
     
     this.socketService
-    .getSocketFromServer()
+    .getNotifs()
     .subscribe((data: any) => {
-     this.notifs.push(data)
-     //
-    })
+      let result = data;
+      result.createdAt = new Date();
+      this.notifs.push(result);
+    
+    });
+
     
     this.testApi.getAll()
     .subscribe(
@@ -45,5 +55,13 @@ notifs : any[]=[];
   changeLang(val) {
     this.translate.use(val)
     localStorage.setItem('l' , val)
+  }
+  update(){
+    console.log(this.result)
+  }
+  redirectScreen(r){
+    let route = this.allScreens.filter((s)=>s.name === r);
+   $('#searchI').prop('value' , '')
+    this.router.navigate([route[0].link])
   }
 }
